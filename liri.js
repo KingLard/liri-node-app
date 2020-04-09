@@ -18,13 +18,32 @@ var spotify = new Spotify(keys.spotify);
         id: spotify.credentials.id,
         secret: spotify.credentials.secret
       });
-       spotify.search({ type: 'track', query: option, limit: 5 }, function(err, data) {
+       spotify.search({ type: 'track', query: option, limit: 1 }, function(err, data) {
          if (err) {
            return console.log('Error occurred: ' + err);
          }
        console.log(data.tracks.items); 
+       var artist = data.tracks.items[0].artists[0].name;
+       var songName = data.tracks.items[0].name;
+       var albumName = data.tracks.items[0].album.name;
+       var preview = data.tracks.items[0].preview_url;
+
+       
+
+
+    //    Artist(s)
+
+    //  * The song's name
+
+    //  * A preview link of the song from Spotify
+
+    //  * The album that the song is from
        });
  }
+
+
+
+
 
  else if (APIchoice === "movie-this") {
     axios
