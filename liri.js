@@ -3,6 +3,7 @@ require("dotenv").config();
 var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
+var fs = require("fs");
 
 
 
@@ -28,16 +29,6 @@ var spotify = new Spotify(keys.spotify);
        var albumName = data.tracks.items[0].album.name;
        var preview = data.tracks.items[0].preview_url;
 
-       
-
-
-    //    Artist(s)
-
-    //  * The song's name
-
-    //  * A preview link of the song from Spotify
-
-    //  * The album that the song is from
        });
  }
 
@@ -62,24 +53,23 @@ var spotify = new Spotify(keys.spotify);
     console.log(rottenRating);
 
 
-    // Title of the movie.
-    // * Year the movie came out.
-    // * IMDB Rating of the movie.
-    // * Rotten Tomatoes Rating of the movie.
-    // * Country where the movie was produced.
-    // * Language of the movie.
-    // * Plot of the movie.
-    // * Actors in the movie.
-   
-
   });
  }
 
 
  
+else if (APIchoice === "do-what-it-says") {
+    // Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+fs.readFile("random.txt", utf8, function(error, data) {
+    if (error) {
+        return console.log("error");
+    } else {
+        
+    }
+})
+    //* It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
 
-
-
-  //omdb api call
+    // * Edit the text in random.txt to test out the feature for movie-this and concert-this.
+}
   
 
