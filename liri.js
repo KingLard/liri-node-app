@@ -48,6 +48,7 @@ axios
 .get(queryURL)
 .then(function(response) {
 
+  
 
   var title = response.data.Title;
   var year = response.data.Year;
@@ -102,9 +103,11 @@ fs.readFile("random.txt", "UTF8", function(error, data) {
 
 
 else if (APIchoice === "spotify-this-song") {
-
-spotifyAPI(option);
-  
+  if (!option) {
+    spotifyAPI("The Sign");
+  } else {
+    spotifyAPI(option);
+  }
  }
     
 
@@ -112,8 +115,12 @@ spotifyAPI(option);
 
 
  else if (APIchoice === "movie-this") {
-
-   movieAPI(option);
+  if (!option) {
+    movieAPI("Mr. Nobody")
+  } else {
+    movieAPI(option);
+  }
+  
 
  }
 
