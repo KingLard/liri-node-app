@@ -24,10 +24,14 @@ var fs = require("fs");
            return console.log('Error occurred: ' + err);
          }
        console.log(data.tracks.items); 
+
+      //  console.log("Artist: " + this.artist + "\nSong Name: " + this.songName + "\nAlbum: " + this.album + "\nSong Preview: " + this.preview)
        var artist = data.tracks.items[0].artists[0].name;
        var songName = data.tracks.items[0].name;
        var albumName = data.tracks.items[0].album.name;
        var preview = data.tracks.items[0].preview_url;
+
+       console.log("Artist: " + artist + "\nSong Name: " + songName + "\nAlbum: " + albumName + "\nSong Preview: " + preview)
 
        });
  }
@@ -49,10 +53,6 @@ var fs = require("fs");
     var language = response.data.Language;
     var plot = response.data.Plot;
     var actors = response.data.Actors
-
-    console.log(rottenRating);
-
-
   });
  }
 
@@ -64,7 +64,7 @@ fs.readFile("random.txt", utf8, function(error, data) {
     if (error) {
         return console.log("error");
     } else {
-        
+
     }
 })
     //* It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
